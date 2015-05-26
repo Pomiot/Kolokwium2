@@ -1,4 +1,4 @@
-# Kolokwium - zestaw1
+# Kolokwium - zestaw2
 
 ## Scenariusz dla projektu Message Publisher
 
