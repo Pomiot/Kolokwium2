@@ -19,12 +19,9 @@ namespace MessagePublisher
             _to = to;
         }
 
-        public override Func<Message, bool> Searcher
+        public override Func<Message, bool> Searcher()
         {
-            get
-            {
-                return (m) => m.PublishedOn < _to.AddDays(1) && m.PublishedOn > _from.Date;
-            }
+            return (m) => m.PublishedOn < _to.AddDays(1) && m.PublishedOn > _from.Date;
         }
     }
 }

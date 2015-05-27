@@ -15,18 +15,16 @@ namespace MessagePublisher
             _query = query;
         }
 
-        public override Func<Message, bool> Searcher
+        public override Func<Message, bool> Searcher()
         {
-            get
+
+            if (string.IsNullOrEmpty(_query))
             {
-                if (string.IsNullOrEmpty(_query))
-                {
-                    return (m) => true;
-                }
-                else
-                {
-                    return (m) => m.Content != null && m.Content.Contains(_query);
-                }
+                return (m) => true;
+            }
+            else
+            {
+                return (m) => m.Content != null && m.Content.Contains(_query);
             }
         }
     }
